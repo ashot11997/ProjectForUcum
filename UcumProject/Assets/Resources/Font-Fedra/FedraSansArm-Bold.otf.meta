@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: afee4f8d3827056459567e65370330b8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fedra Sans Arm
+  fontNames:
+  - Fedra Sans Arm
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 390556925cf66b8428093a231b9ef60f, type: 3}
+  - {fileID: 12800000, guid: 500fead2051af3c40828aa9078317f39, type: 3}
+  - {fileID: 12800000, guid: a16417b5f669a2d4dab1ebbe0e1488a7, type: 3}
+  - {fileID: 12800000, guid: 23ea6a3778c033d46b9ead5fbcf969f6, type: 3}
+  - {fileID: 12800000, guid: 6d207f870db30c34195a78e31907fdbd, type: 3}
+  - {fileID: 12800000, guid: a521e4898224d8b40950937ea575ba0e, type: 3}
+  - {fileID: 12800000, guid: 0014ff0b1a4c16e4fa64734b3c5c6b7a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
