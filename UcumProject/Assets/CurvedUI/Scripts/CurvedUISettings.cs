@@ -87,6 +87,10 @@ namespace CurvedUI
 
         void Start()
         {
+			if (SystemInfo.deviceType == DeviceType.Desktop) {
+				ControlMethod = CurvedUIInputModule.CUIControlMethod.MOUSE;
+			}
+
             if (Application.isPlaying)
             {   
                 
