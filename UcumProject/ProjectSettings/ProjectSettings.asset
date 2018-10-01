@@ -243,7 +243,7 @@ PlayerSettings:
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/Ashot/ProjectForUcom/UcumProject/KeyStore/Key.keystore
   AndroidKeyaliasName: key
-  AndroidTVCompatibility: 0
+  AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
   androidEnableBanner: 1

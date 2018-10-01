@@ -75,7 +75,8 @@ public class MainMenuUIController : MonoBehaviour {
 				Intent.launchApp("com.jauntvr.android.player.gearvr");
 				break;
 			case AppName.RedBull:
-				Intent.launchApp("com.nousguide.android.rbtv");
+				//Intent.launchApp("com.nousguide.android.rbtv");
+				Intent.launchApp("com.oculus.tv");
 				break;
 			case AppName.Disney:
 				Intent.launchApp("com.disney.dmvr");
