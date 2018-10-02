@@ -1,94 +1,90 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class MainMenuUIController : MonoBehaviour {
 
-	private enum AppName
+	private enum MenuType
 	{
-		Discovery,
-		BBC,
-		Within,
-		Jaint,
-		RedBull,
-		Disney,
-		CNN,
-		NewYorkTimes,
-		Yoga
+		MostPopular,
+		Movies,
+		Games,
+		Education,
+		Kids,
+		Music,
+		News,
 	};
 
-	public Button DiscoveryBtn;
-	public Button BBCBtn;
-	public Button WithinBtn;
-	public Button JaintBtn;
-	public Button RBBtn;
-	public Button DisneyBtn;
-	public Button CNNBtn;
-	public Button NYTBtn;
-	public Button YogaBtn;
+	[SerializeField] MostPopularController MostPopularSection;
+	[SerializeField] MovieController MovieSection;
+	[SerializeField] NewsController NewsSection;
 
-	public Intent Intent;
+	public ButtonsHover MostPopularBtn;
+	public ButtonsHover MoviesBtn;
+	public ButtonsHover GamesBtn;
+	public ButtonsHover EducationBtn;
+	public ButtonsHover KidsBtn;
+	public ButtonsHover MusicBtn;
+	public ButtonsHover NewsBtn;
 
-	void Awake () {
-		DiscoveryBtn.onClick.AddListener(() => {
-			OpenApp(AppName.Discovery);
+	void Awake() {
+		MostPopularBtn.GetComponent<Button>().onClick.AddListener(() => {
+			OpenMenu(MenuType.MostPopular);
 		});
-		BBCBtn.onClick.AddListener(() => {
-			OpenApp(AppName.BBC);
+
+		MoviesBtn.GetComponent<Button>().onClick.AddListener(() => {
+			OpenMenu(MenuType.Movies);
 		});
-		WithinBtn.onClick.AddListener(() => {
-			OpenApp(AppName.Within);
-		});
-		JaintBtn.onClick.AddListener(() => {
-			OpenApp(AppName.Jaint);
-		});
-		RBBtn.onClick.AddListener(() => {
-			OpenApp(AppName.RedBull);
-		});
-		DisneyBtn.onClick.AddListener(() => {
-			OpenApp(AppName.Disney);
-		});
-		CNNBtn.onClick.AddListener(() => {
-			OpenApp(AppName.CNN);
-		});
-		NYTBtn.onClick.AddListener(() => {
-			OpenApp(AppName.NewYorkTimes);
-		});
-		YogaBtn.onClick.AddListener(() => {
-			OpenApp(AppName.Yoga);
+
+		NewsBtn.GetComponent<Button>().onClick.AddListener(() => {
+			OpenMenu(MenuType.News);
 		});
 	}
-	void OpenApp(AppName type) {
 
-		switch (type)
+	void OpenMenu(MenuType type) {
+		switch(type)
 		{
-			case AppName.Discovery:
-				Intent.launchApp("com.templegatesgames.DiscoveryGear");
+			case MenuType.MostPopular:
+				MovieSection.Close();
+				NewsSection.Close();
+
+				MostPopularBtn.MakeActive();
+				MoviesBtn.MakeDeActive();
+				GamesBtn.MakeDeActive();
+				EducationBtn.MakeDeActive();
+				KidsBtn.MakeDeActive();
+				MusicBtn.MakeDeActive();
+				NewsBtn.MakeDeActive();
+
+				MostPopularSection.Open();
 				break;
-			case AppName.BBC:
-				Intent.launchApp("uk.co.bbc.vr");
+			case MenuType.Movies:
+				MostPopularSection.Close();
+				NewsSection.Close();
+
+				MostPopularBtn.MakeDeActive();
+				MoviesBtn.MakeActive();
+				GamesBtn.MakeDeActive();
+				EducationBtn.MakeDeActive();
+				KidsBtn.MakeDeActive();
+				MusicBtn.MakeDeActive();
+				NewsBtn.MakeDeActive();
+
+				MovieSection.Open();
 				break;
-			case AppName.Within:
-				Intent.launchApp("com.shakingearthdigital.vrse");
-				break;
-			case AppName.Jaint:
-				Intent.launchApp("com.jauntvr.android.player.gearvr");
-				break;
-			case AppName.RedBull:
-				//Intent.launchApp("com.nousguide.android.rbtv");
-				Intent.launchApp("com.oculus.tv");
-				break;
-			case AppName.Disney:
-				Intent.launchApp("com.disney.dmvr");
-				break;
-			case AppName.CNN:
-				Intent.launchApp("com.mobile.cnnvr");
-				break;
-			case AppName.NewYorkTimes:
-				Intent.launchApp("co.vusr.nytvr.gearvr");
-				break;
-			case AppName.Yoga:
-				Intent.launchApp("com.CubicleNinjas.GMVRMobile");
+
+			case MenuType.News:
+				MostPopularSection.Close();
+				MovieSection.Close();
+
+				MostPopularBtn.MakeDeActive();
+				MoviesBtn.MakeDeActive();
+				GamesBtn.MakeDeActive();
+				EducationBtn.MakeDeActive();
+				KidsBtn.MakeDeActive();
+				MusicBtn.MakeDeActive();
+				NewsBtn.MakeActive();
+
+				NewsSection.Open();
 				break;
 		}
 	}
