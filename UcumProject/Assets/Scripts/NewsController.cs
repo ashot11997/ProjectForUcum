@@ -39,11 +39,10 @@ public class NewsController : MonoBehaviour {
 		switch (type)
 		{
 			case NewsName.AzatutyunTv:
-
+				VideoPlayer.PlayYoutubeVideo("TcutnIW0Pqw");
 				break;
 			case NewsName.HanrainTv:
-
-				VideoPlayer.Open();
+				VideoPlayer.PlayYoutubeVideo("3m-KXvZX8cA");
 				break;
 		}
 	}

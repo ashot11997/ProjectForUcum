@@ -17,6 +17,7 @@ public class MainMenuUIController : MonoBehaviour {
 	[SerializeField] MostPopularController MostPopularSection;
 	[SerializeField] MovieController MovieSection;
 	[SerializeField] NewsController NewsSection;
+	[SerializeField] KidsController KidsSection;
 
 	public ButtonsHover MostPopularBtn;
 	public ButtonsHover MoviesBtn;
@@ -38,6 +39,10 @@ public class MainMenuUIController : MonoBehaviour {
 		NewsBtn.GetComponent<Button>().onClick.AddListener(() => {
 			OpenMenu(MenuType.News);
 		});
+
+		KidsBtn.GetComponent<Button>().onClick.AddListener(() => {
+			OpenMenu(MenuType.Kids);
+		});
 	}
 
 	void OpenMenu(MenuType type) {
@@ -46,6 +51,7 @@ public class MainMenuUIController : MonoBehaviour {
 			case MenuType.MostPopular:
 				MovieSection.Close();
 				NewsSection.Close();
+				KidsSection.Close();
 
 				MostPopularBtn.MakeActive();
 				MoviesBtn.MakeDeActive();
@@ -60,6 +66,7 @@ public class MainMenuUIController : MonoBehaviour {
 			case MenuType.Movies:
 				MostPopularSection.Close();
 				NewsSection.Close();
+				KidsSection.Close();
 
 				MostPopularBtn.MakeDeActive();
 				MoviesBtn.MakeActive();
@@ -75,6 +82,7 @@ public class MainMenuUIController : MonoBehaviour {
 			case MenuType.News:
 				MostPopularSection.Close();
 				MovieSection.Close();
+				KidsSection.Close();
 
 				MostPopularBtn.MakeDeActive();
 				MoviesBtn.MakeDeActive();
@@ -85,6 +93,22 @@ public class MainMenuUIController : MonoBehaviour {
 				NewsBtn.MakeActive();
 
 				NewsSection.Open();
+				break;
+
+			case MenuType.Kids:
+				MostPopularSection.Close();
+				MovieSection.Close();
+				NewsSection.Close();
+
+				MostPopularBtn.MakeDeActive();
+				MoviesBtn.MakeDeActive();
+				GamesBtn.MakeDeActive();
+				EducationBtn.MakeDeActive();
+				KidsBtn.MakeActive();
+				MusicBtn.MakeDeActive();
+				NewsBtn.MakeDeActive();
+
+				KidsSection.Open();
 				break;
 		}
 	}

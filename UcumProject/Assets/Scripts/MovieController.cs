@@ -14,9 +14,6 @@ public class MovieController : MonoBehaviour {
 
 	[SerializeField] NewPlaybackSystem VideoPlayer;
 
-	public Material TvPano;
-	public GameObject Menu;
-
 	void Awake()
 	{
 		Movie1.onClick.AddListener(() => {
@@ -42,16 +39,10 @@ public class MovieController : MonoBehaviour {
 		switch (type)
 		{
 			case MovieName.Azizyanner:
-				//VideoPlayer.Open();
 				VideoPlayer.PlayYoutubeVideo("9aHlFdot3kI");
-				/*RenderSettings.skybox = TvPano;
-				Menu.SetActive(false);*/
 				break;
 			case MovieName.HinArqaner:
-				//VideoPlayer.Open();
 				VideoPlayer.PlayYoutubeVideo("NX9I3HuYu3k");
-				/*RenderSettings.skybox = TvPano;
-				Menu.SetActive(false);*/
 				break;
 		}
 	}

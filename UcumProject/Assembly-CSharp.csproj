@@ -354,6 +354,7 @@
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\HeaderUIController.cs" />
      <Compile Include="Assets\Scripts\Intent.cs" />
+     <Compile Include="Assets\Scripts\KidsController.cs" />
      <Compile Include="Assets\Scripts\MainMenuUIController.cs" />
      <Compile Include="Assets\Scripts\MostPopularController.cs" />
      <Compile Include="Assets\Scripts\MovieController.cs" />
